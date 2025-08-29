@@ -1,9 +1,8 @@
-import { type NextRequest, NextResponse } from "next/server"
+import { updateSession } from "@/lib/supabase/middleware"
+import type { NextRequest } from "next/server"
 
 export async function middleware(request: NextRequest) {
-  // For now, just pass through all requests without authentication
-  // This allows the standalone workspace to work without Supabase
-  return NextResponse.next()
+  return await updateSession(request)
 }
 
 export const config = {
@@ -16,6 +15,6 @@ export const config = {
      * - images - .svg, .png, .jpg, .jpeg, .gif, .webp
      * Feel free to modify this pattern to include more paths.
      */
-    "/((?!_next/static|_next/image|favicon.ico|.*.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
+    "/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
   ],
 }

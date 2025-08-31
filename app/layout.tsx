@@ -17,7 +17,7 @@ const manrope = Manrope({
 })
 
 export const metadata: Metadata = {
-  title: "MediaPlan AI - Plataforma de Autogestión de Planes de Medios",
+  title: "IREAL - Plataforma de Autogestión de Planes de Medios",
   description: "Plataforma inteligente para creadores de contenido y agencias de marketing digital",
   generator: "v0.app",
 }

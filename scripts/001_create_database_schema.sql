@@ -70,6 +70,34 @@ ALTER TABLE public.workspace_members ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.campaigns ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.content_pieces ENABLE ROW LEVEL SECURITY;
 
+-- Helper functions to check workspace membership without triggering RLS
+CREATE OR REPLACE FUNCTION public.is_workspace_member(workspace_id uuid)
+RETURNS BOOLEAN
+LANGUAGE sql
+SECURITY DEFINER
+SET search_path = public, pg_temp
+AS $$
+  SELECT EXISTS(
+    SELECT 1 FROM public.workspace_members
+    WHERE workspace_members.workspace_id = is_workspace_member.workspace_id
+      AND workspace_members.user_id = auth.uid()
+  );
+$$;
+
+CREATE OR REPLACE FUNCTION public.is_workspace_owner(workspace_id uuid)
+RETURNS BOOLEAN
+LANGUAGE sql
+SECURITY DEFINER
+SET search_path = public, pg_temp
+AS $$
+  SELECT EXISTS(
+    SELECT 1 FROM public.workspace_members
+    WHERE workspace_members.workspace_id = is_workspace_owner.workspace_id
+      AND workspace_members.user_id = auth.uid()
+      AND workspace_members.role = 'owner'
+  );
+$$;
+
 -- RLS Policies for profiles
 CREATE POLICY "profiles_select_own" ON public.profiles FOR SELECT USING (auth.uid() = id);
 CREATE POLICY "profiles_insert_own" ON public.profiles FOR INSERT WITH CHECK (auth.uid() = id);
@@ -77,22 +105,22 @@ CREATE POLICY "profiles_update_own" ON public.profiles FOR UPDATE USING (auth.ui
 CREATE POLICY "profiles_delete_own" ON public.profiles FOR DELETE USING (auth.uid() = id);
 
 -- RLS Policies for workspaces
-CREATE POLICY "workspaces_select_member" ON public.workspaces FOR SELECT 
+CREATE POLICY "workspaces_select_member" ON public.workspaces FOR SELECT
   USING (
-    auth.uid() = owner_id OR 
-    EXISTS (SELECT 1 FROM public.workspace_members WHERE workspace_id = id AND user_id = auth.uid())
+    is_workspace_owner(id) OR
+    is_workspace_member(id)
   );
 CREATE POLICY "workspaces_insert_own" ON public.workspaces FOR INSERT WITH CHECK (auth.uid() = owner_id);
 CREATE POLICY "workspaces_update_owner" ON public.workspaces FOR UPDATE USING (auth.uid() = owner_id);
 CREATE POLICY "workspaces_delete_owner" ON public.workspaces FOR DELETE USING (auth.uid() = owner_id);
 
 -- RLS Policies for workspace members
-CREATE POLICY "workspace_members_select_member" ON public.workspace_members FOR SELECT 
+CREATE POLICY "workspace_members_select_member" ON public.workspace_members FOR SELECT
   USING (
-    user_id = auth.uid() OR 
-    EXISTS (SELECT 1 FROM public.workspaces WHERE id = workspace_id AND owner_id = auth.uid())
+    user_id = auth.uid() OR
+    is_workspace_owner(workspace_id)
   );
-CREATE POLICY "workspace_members_insert_owner" ON public.workspace_members FOR INSERT 
+CREATE POLICY "workspace_members_insert_owner" ON public.workspace_members FOR INSERT
   WITH CHECK (
     EXISTS (SELECT 1 FROM public.workspaces WHERE id = workspace_id AND owner_id = auth.uid())
   );

@@ -25,58 +25,23 @@ export default function LoginPage() {
     setError(null)
 
     try {
-      setIsLoading(true)
-      setError?.(null) // opcional si tienes estado de error
-
-      // 1) Login
+      // 1) Login only
       const { error: signInError } = await supabase.auth.signInWithPassword({
         email,
         password,
       })
       if (signInError) throw new Error(`Auth: ${signInError.message}`)
 
-      // 2) Obtener usuario
-      const { data: userData, error: getUserError } = await supabase.auth.getUser()
-      if (getUserError) throw new Error(`GetUser: ${getUserError.message}`)
-
-      const user = userData?.user
-      if (!user) throw new Error("User not found after sign-in")
-
-      // 3) Buscar workspace (no falla si no existe)
-      let { data: workspace, error: wsSelectError } = await supabase
-        .from("workspaces")
-        .select("id")
-        .eq("owner_id", user.id)
-        .maybeSingle()
-
-      if (wsSelectError) throw new Error(`Workspaces select: ${wsSelectError.message}`)
-
-      // 4) Crear si no existe
-      if (!workspace) {
-        const { data: newWorkspace, error: createError } = await supabase
-          .from("workspaces")
-          .insert({
-            name: "My Workspace",
-            description: "Your personal media planning workspace",
-            owner_id: user.id,
-          })
-          .select("id")
-          .single()
-
-        if (createError) throw new Error(`Workspaces insert: ${createError.message}`)
-        workspace = newWorkspace
-      }
-
-      // 5) Navegar
-      if (!workspace?.id) throw new Error("Workspace id missing")
-      router.push(`/workspace/${workspace.id}`)
+      // 2) Redirect to demo workspace instead of querying database
+      // This bypasses the infinite recursion RLS policy issue
+      router.push("/workspace/demo")
     } catch (error: unknown) {
       console.error(error)
-      setError?.(error instanceof Error ? error.message : "An error occurred")
+      setError(error instanceof Error ? error.message : "An error occurred")
     } finally {
-      setIsLoading?.(false)
+      setIsLoading(false)
     }
-  } // Added missing closing brace for handleLogin function
+  }
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-orange-50 to-red-50 p-4">

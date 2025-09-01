@@ -44,11 +44,11 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-orange-50 to-red-50 p-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[hsl(var(--color-primary)/0.1)] via-[hsl(var(--color-accent)/0.1)] to-[hsl(var(--color-destructive)/0.1)] p-4">
       <div className="w-full max-w-md">
         <Card className="border-0 shadow-xl bg-white/80 backdrop-blur-sm">
           <CardHeader className="text-center space-y-2">
-            <div className="mx-auto w-12 h-12 bg-gradient-to-r from-blue-600 to-orange-500 rounded-xl flex items-center justify-center mb-4">
+            <div className="mx-auto w-12 h-12 bg-gradient-to-r from-[hsl(var(--color-primary))] to-[hsl(var(--color-accent))] rounded-xl flex items-center justify-center mb-4">
               <span className="text-white font-bold text-xl">MP</span>
             </div>
             <CardTitle className="text-2xl font-semibold text-gray-900">Welcome back</CardTitle>
@@ -89,7 +89,7 @@ export default function LoginPage() {
               )}
               <Button
                 type="submit"
-                className="w-full h-11 bg-gradient-to-r from-blue-600 to-orange-500 hover:from-blue-700 hover:to-orange-600 text-white font-medium"
+                className="w-full h-11 bg-gradient-to-r from-[hsl(var(--color-primary))] to-[hsl(var(--color-accent))] hover:from-[hsl(var(--color-primary))] hover:to-[hsl(var(--color-accent))] text-white font-medium"
                 disabled={isLoading}
               >
                 {isLoading ? "Signing in..." : "Sign in"}

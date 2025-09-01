@@ -70,7 +70,7 @@ export default function DemoWorkspace() {
       <header className="bg-white border-b border-slate-200 px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
-            <h1 className="text-2xl font-bold text-slate-900">MediaPlan AI</h1>
+            <h1 className="text-2xl font-bold text-slate-900">Ireal</h1>
             <Badge variant="secondary">Mi Workspace</Badge>
           </div>
           <div className="flex items-center space-x-4">

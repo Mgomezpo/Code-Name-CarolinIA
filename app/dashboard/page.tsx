@@ -50,7 +50,7 @@ export default async function DashboardPage() {
               <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-orange-500 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">MP</span>
               </div>
-              <span className="font-bold text-xl text-foreground">MediaPlan AI</span>
+              <span className="font-bold text-xl text-foreground">Ireal</span>
             </div>
             <div className="flex items-center gap-4">
               <span className="text-sm text-muted-foreground">Welcome, {profile?.full_name || data.user.email}</span>

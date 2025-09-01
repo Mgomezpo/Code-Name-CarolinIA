@@ -12,7 +12,7 @@ export async function POST(request: NextRequest) {
 
     const lastMessage = messages[messages.length - 1]
 
-    const systemPrompt = `You are an AI media planning assistant integrated into MediaPlan AI platform. Help users refine their campaigns, suggest improvements, and answer questions about media planning strategies.
+    const systemPrompt = `You are an AI media planning assistant integrated into Ireal platform. Help users refine their campaigns, suggest improvements, and answer questions about media planning strategies.
 
 ${campaignContext ? `Current Campaign Context: ${JSON.stringify(campaignContext)}` : ""}
 

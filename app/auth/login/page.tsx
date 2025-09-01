@@ -52,7 +52,7 @@ export default function LoginPage() {
               <span className="text-white font-bold text-xl">MP</span>
             </div>
             <CardTitle className="text-2xl font-semibold text-gray-900">Welcome back</CardTitle>
-            <CardDescription className="text-gray-600">Sign in to your MediaPlan AI account</CardDescription>
+            <CardDescription className="text-gray-600">Sign in to your Ireal account</CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleLogin} className="space-y-4">

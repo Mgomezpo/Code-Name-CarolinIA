@@ -19,7 +19,7 @@ export default function CheckEmailPage() {
           </CardHeader>
           <CardContent className="text-center space-y-4">
             <p className="text-sm text-gray-600">
-              Click the link in your email to verify your account and start using MediaPlan AI.
+              Click the link in your email to verify your account and start using Ireal.
             </p>
             <div className="pt-4">
               <Button asChild variant="outline" className="w-full bg-transparent">

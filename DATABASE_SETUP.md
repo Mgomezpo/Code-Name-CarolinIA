@@ -21,6 +21,11 @@ Ejecuta el script `scripts/003_add_social_media_connections.sql`:
 - Añade funcionalidad de conexiones con redes sociales
 - Necesario solo si planeas usar la integración social
 
+### 4. Ejecutar Script de Ireal (OPCIONAL)
+Ejecuta el script `scripts/004_ireal_specific_features.sql`:
+- Añade funcionalidades específicas para Ireal
+- Necesario solo si planeas usar las características de Ireal
+
 ## Cómo Ejecutar los Scripts
 
 ### Opción 1: Desde v0 (Recomendado)
@@ -31,13 +36,14 @@ Ejecuta el script `scripts/003_add_social_media_connections.sql`:
 1. Ve a tu proyecto en Supabase
 2. Navega a SQL Editor
 3. Copia y pega el contenido de cada script
-4. Ejecuta en orden: 001 → 002 → 003
+4. Ejecuta en orden: 001 → 002 → 003 → 004
 
 ## Verificación
 Después de ejecutar los scripts, deberías poder:
 - Crear workspaces sin errores
 - Ver las tablas en tu base de datos Supabase
 - Usar todas las funcionalidades de la plataforma
+- Utilizar las características específicas de Ireal si los scripts correspondientes fueron ejecutados
 
 ## Troubleshooting
 Si sigues teniendo problemas:

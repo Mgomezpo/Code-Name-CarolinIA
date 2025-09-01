@@ -326,7 +326,7 @@ export default function SocialMediaPage({ params }: { params: { id: string } }) 
               </div>
               <h3 className="text-lg font-semibold mb-2">No social media connections</h3>
               <p className="text-slate-600 mb-4">
-                Connect your social media accounts to start publishing content directly from MediaPlan AI.
+                Connect your social media accounts to start publishing content directly from Ireal.
               </p>
               <Button
                 onClick={() => setShowAddDialog(true)}

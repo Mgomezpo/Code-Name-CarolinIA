@@ -77,7 +77,7 @@ export default async function HomePage() {
 
             <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 font-sans">
               Autogestiona tus{" "}
-              <span className="bg-gradient-to-r from-[hsl(var(--color-primary))] via-[hsl(var(--color-accent))] to-[hsl(var(--color-destructive))] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[hsl(var(--color-primary))] via-[hsl(var(--color-accent))] to-[hsl(var(--color-destructive))] bg-clip-text text-[rgba(184,0,35,1)]">
                 Planes de Medios
               </span>{" "}
               con IA

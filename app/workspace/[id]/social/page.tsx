@@ -167,7 +167,7 @@ export default function SocialMediaPage({ params }: { params: { id: string } }) 
             </div>
             <Dialog open={showAddDialog} onOpenChange={setShowAddDialog}>
               <DialogTrigger asChild>
-                <Button className="bg-gradient-to-r from-blue-600 to-orange-500 hover:from-blue-700 hover:to-orange-600">
+                <Button className="bg-gradient-to-r from-[hsl(var(--color-primary))] to-[hsl(var(--color-accent))] hover:from-[hsl(var(--color-primary))] hover:to-[hsl(var(--color-accent))]">
                   <Plus className="w-4 h-4 mr-2" />
                   Add Connection
                 </Button>
@@ -330,7 +330,7 @@ export default function SocialMediaPage({ params }: { params: { id: string } }) 
               </p>
               <Button
                 onClick={() => setShowAddDialog(true)}
-                className="bg-gradient-to-r from-blue-600 to-orange-500 hover:from-blue-700 hover:to-orange-600"
+                className="bg-gradient-to-r from-[hsl(var(--color-primary))] to-[hsl(var(--color-accent))] hover:from-[hsl(var(--color-primary))] hover:to-[hsl(var(--color-accent))]"
               >
                 <Plus className="w-4 h-4 mr-2" />
                 Add Your First Connection

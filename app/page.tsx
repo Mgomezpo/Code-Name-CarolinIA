@@ -43,7 +43,7 @@ export default async function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-orange-500 rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-gradient-to-r from-[hsl(var(--color-primary))] to-[hsl(var(--color-accent))] rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">MP</span>
               </div>
               <span className="font-bold text-xl text-foreground">Ireal</span>
@@ -54,7 +54,7 @@ export default async function HomePage() {
               </Button>
               <Button
                 asChild
-                className="bg-gradient-to-r from-blue-600 to-orange-500 hover:from-blue-700 hover:to-orange-600"
+                className="bg-gradient-to-r from-[hsl(var(--color-primary))] to-[hsl(var(--color-accent))] hover:from-[hsl(var(--color-primary))] hover:to-[hsl(var(--color-accent))]"
               >
                 <Link href="/auth/signup">Get Started</Link>
               </Button>
@@ -66,7 +66,7 @@ export default async function HomePage() {
       {/* Hero Section */}
       <section className="relative overflow-hidden">
         {/* Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-orange-500/10 to-red-500/10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--color-primary)/0.1)] via-[hsl(var(--color-accent)/0.1)] to-[hsl(var(--color-destructive)/0.1)]" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
           <div className="text-center">
@@ -77,7 +77,7 @@ export default async function HomePage() {
 
             <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 font-sans">
               Autogestiona tus{" "}
-              <span className="bg-gradient-to-r from-blue-600 via-orange-500 to-red-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[hsl(var(--color-primary))] via-[hsl(var(--color-accent))] to-[hsl(var(--color-destructive))] bg-clip-text text-transparent">
                 Planes de Medios
               </span>{" "}
               con IA
@@ -91,7 +91,7 @@ export default async function HomePage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-blue-600 via-orange-500 to-red-500 hover:opacity-90 text-white"
+                className="bg-gradient-to-r from-[hsl(var(--color-primary))] via-[hsl(var(--color-accent))] to-[hsl(var(--color-destructive))] hover:opacity-90 text-white"
                 asChild
               >
                 <Link href="/auth/signup">
@@ -206,7 +206,7 @@ export default async function HomePage() {
           </p>
           <Button
             size="lg"
-            className="bg-gradient-to-r from-blue-600 via-orange-500 to-red-500 hover:opacity-90 text-white"
+            className="bg-gradient-to-r from-[hsl(var(--color-primary))] via-[hsl(var(--color-accent))] to-[hsl(var(--color-destructive))] hover:opacity-90 text-white"
             asChild
           >
             <Link href="/auth/signup">

@@ -5,11 +5,11 @@ import { Mail } from "lucide-react"
 
 export default function CheckEmailPage() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-orange-50 to-red-50 p-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[hsl(var(--color-primary)/0.1)] via-[hsl(var(--color-accent)/0.1)] to-[hsl(var(--color-destructive)/0.1)] p-4">
       <div className="w-full max-w-md">
         <Card className="border-0 shadow-xl bg-white/80 backdrop-blur-sm">
           <CardHeader className="text-center space-y-4">
-            <div className="mx-auto w-16 h-16 bg-gradient-to-r from-blue-600 to-orange-500 rounded-full flex items-center justify-center">
+            <div className="mx-auto w-16 h-16 bg-gradient-to-r from-[hsl(var(--color-primary))] to-[hsl(var(--color-accent))] rounded-full flex items-center justify-center">
               <Mail className="w-8 h-8 text-white" />
             </div>
             <CardTitle className="text-2xl font-semibold text-gray-900">Check your email</CardTitle>

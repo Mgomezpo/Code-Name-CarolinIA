@@ -54,7 +54,7 @@ export default async function WorkspacePage({ params }: WorkspacePageProps) {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-orange-500 rounded-lg flex items-center justify-center">
+                <div className="w-8 h-8 bg-gradient-to-r from-[hsl(var(--color-primary))] to-[hsl(var(--color-accent))] rounded-lg flex items-center justify-center">
                   <span className="text-white font-bold text-sm">MP</span>
                 </div>
                 <div>
@@ -91,7 +91,7 @@ export default async function WorkspacePage({ params }: WorkspacePageProps) {
                 </Link>
               </Button>
               <Button
-                className="bg-gradient-to-r from-blue-600 to-orange-500 hover:from-blue-700 hover:to-orange-600"
+                className="bg-gradient-to-r from-[hsl(var(--color-primary))] to-[hsl(var(--color-accent))] hover:from-[hsl(var(--color-primary))] hover:to-[hsl(var(--color-accent))]"
                 asChild
               >
                 <Link href={`/workspace/${workspace.id}/campaigns/new`}>
@@ -141,7 +141,7 @@ export default async function WorkspacePage({ params }: WorkspacePageProps) {
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-2xl font-semibold text-foreground">Campaigns</h2>
             <Button
-              className="bg-gradient-to-r from-blue-600 to-orange-500 hover:from-blue-700 hover:to-orange-600"
+              className="bg-gradient-to-r from-[hsl(var(--color-primary))] to-[hsl(var(--color-accent))] hover:from-[hsl(var(--color-primary))] hover:to-[hsl(var(--color-accent))]"
               asChild
             >
               <Link href={`/workspace/${workspace.id}/campaigns/new`}>

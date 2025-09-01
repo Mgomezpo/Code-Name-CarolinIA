@@ -65,7 +65,7 @@ export default function StandaloneWorkspacePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-4">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-orange-500 rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-gradient-to-r from-[hsl(var(--color-primary))] to-[hsl(var(--color-accent))] rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">MP</span>
               </div>
               <div>
@@ -153,7 +153,7 @@ export default function StandaloneWorkspacePage() {
           <TabsContent value="campaigns" className="space-y-6">
             <div className="flex justify-between items-center">
               <h3 className="text-xl font-semibold">Mis Campañas</h3>
-              <Button className="bg-gradient-to-r from-blue-600 to-orange-500 hover:from-blue-700 hover:to-orange-600">
+              <Button className="bg-gradient-to-r from-[hsl(var(--color-primary))] to-[hsl(var(--color-accent))] hover:from-[hsl(var(--color-primary))] hover:to-[hsl(var(--color-accent))]">
                 <Plus className="w-4 h-4 mr-2" />
                 Nueva Campaña con IA
               </Button>
@@ -244,7 +244,7 @@ export default function StandaloneWorkspacePage() {
                 <Card key={index}>
                   <CardContent className="p-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-orange-500 rounded-full flex items-center justify-center text-white font-semibold">
+                      <div className="w-10 h-10 bg-gradient-to-r from-[hsl(var(--color-primary))] to-[hsl(var(--color-accent))] rounded-full flex items-center justify-center text-white font-semibold">
                         {member.avatar}
                       </div>
                       <div>

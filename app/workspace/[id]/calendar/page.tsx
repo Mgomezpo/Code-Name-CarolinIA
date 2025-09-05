@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { ArrowLeft, Plus, CalendarIcon, ChevronLeft, ChevronRight } from "lucide-react"
+import Link from "next/link"
 import { createBrowserClient } from "@supabase/ssr"
 
 interface ContentPiece {
@@ -224,9 +225,14 @@ export default function CalendarPage({ params }: { params: { id: string } }) {
                 <option value="twitter">Twitter</option>
                 <option value="tiktok">TikTok</option>
               </select>
-              <Button className="bg-gradient-to-r from-[hsl(var(--color-primary))] to-[hsl(var(--color-accent))] hover:from-[hsl(var(--color-primary))] hover:to-[hsl(var(--color-accent))]">
-                <Plus className="w-4 h-4 mr-2" />
-                New Content
+              <Button
+                className="bg-gradient-to-r from-[hsl(var(--color-primary))] to-[hsl(var(--color-accent))] hover:from-[hsl(var(--color-primary))] hover:to-[hsl(var(--color-accent))]"
+                asChild
+              >
+                <Link href={`/workspace/${params.id}/content/new`}>
+                  <Plus className="w-4 h-4 mr-2" />
+                  New Content
+                </Link>
               </Button>
             </div>
           </div>

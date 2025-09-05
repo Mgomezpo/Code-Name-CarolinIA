@@ -189,9 +189,14 @@ export default async function WorkspacePage({ params }: WorkspacePageProps) {
                       {campaign.target_audience && <p>Target: {campaign.target_audience}</p>}
                       {campaign.budget && <p>Budget: {campaign.budget}</p>}
                     </div>
-                    <Button variant="ghost" size="sm" asChild>
-                      <Link href={`/workspace/${workspace.id}/campaigns/${campaign.id}/editor`}>Open Editor</Link>
-                    </Button>
+                    <div className="flex gap-2">
+                      <Button variant="ghost" size="sm" asChild>
+                        <Link href={`/workspace/${workspace.id}/campaigns/${campaign.id}/editor`}>Open Editor</Link>
+                      </Button>
+                      <Button variant="ghost" size="sm" asChild>
+                        <Link href={`/workspace/${workspace.id}/campaigns/${campaign.id}/chat`}>AI Chat</Link>
+                      </Button>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
@@ -208,9 +213,11 @@ export default async function WorkspacePage({ params }: WorkspacePageProps) {
                 <CardDescription>Manage who has access to this workspace</CardDescription>
               </div>
               {isOwner && (
-                <Button variant="outline">
-                  <Plus className="w-4 h-4 mr-2" />
-                  Invite Member
+                <Button variant="outline" asChild>
+                  <Link href={`/workspace/${workspace.id}/team`}>
+                    <Plus className="w-4 h-4 mr-2" />
+                    Invite Member
+                  </Link>
                 </Button>
               )}
             </div>

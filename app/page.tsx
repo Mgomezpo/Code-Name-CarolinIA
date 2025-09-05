@@ -43,7 +43,8 @@ export default async function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-[hsl(var(--color-primary))] to-[hsl(var(--color-accent))] rounded-lg flex items-center justify-center text-black bg-[rgba(184,0,35,1)](184,0,35,1)](184,0,35,1)]        <span className="text-white font-bold text-sm">IR</span>
+              <div className="w-8 h-8 bg-gradient-to-r from-[hsl(var(--color-primary))] to-[hsl(var(--color-accent))] rounded-lg flex items-center justify-center text-black">
+                <span className="text-white font-bold text-sm">IR</span>
               </div>
               <span className="font-bold text-xl text-foreground">Ireal</span>
             </div>
@@ -134,7 +135,9 @@ export default async function HomePage() {
             <Card className="border-border hover:shadow-lg transition-shadow">
               <CardHeader>
                 <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
-                  <Calendar clasw-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4 text-[rgba(243,216,217,1)]-6 h-6 text-secondary bg-[rgba(223,217,212,1)]font-sans">Calendario Dinámico</CardTitle>
+                  <Calendar className="w-6 h-6 text-secondary" />
+                </div>
+                <CardTitle className="font-sans">Calendario Dinámico</CardTitle>
                 <CardDescription className="font-serif">
                   Organiza y programa todo tu contenido en un calendario visual e intuitivo
                 </CardDescription>
@@ -170,7 +173,7 @@ export default async function HomePage() {
                 <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
                   <Sparkles className="w-6 h-6 text-secondary" />
                 </div>
-                w-6 h-6anvas</CardTitle>
+                <CardTitle className="font-sans">Canvas Visual</CardTitle>
                 <CardDescription className="font-serif">
                   Interfaz visual tipo Notion para crear y editar planes de medios intuitivamente
                 </CardDescription>
